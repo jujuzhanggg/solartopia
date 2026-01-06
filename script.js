@@ -1,10 +1,19 @@
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
+const menuButton = document.querySelector('.menu-button');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
+
+if (menuButton) {
+    menuButton.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
@@ -65,6 +74,31 @@ if (newsletterForm) {
         // Clear message after 5 seconds
         setTimeout(() => {
             newsletterMessage.textContent = '';
+        }, 5000);
+    });
+}
+
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm');
+const contactFormMessage = document.getElementById('contactFormMessage');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = contactForm.querySelector('input[type="email"]').value;
+        
+        // Simulate form submission
+        contactFormMessage.textContent = 'Thank you! Your submission has been received!';
+        contactFormMessage.style.color = '#2d3748';
+        contactFormMessage.style.fontSize = '12px';
+        contactFormMessage.style.marginTop = '10px';
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Clear message after 5 seconds
+        setTimeout(() => {
+            contactFormMessage.textContent = '';
         }, 5000);
     });
 }
