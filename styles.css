@@ -119,6 +119,7 @@ body {
     position: absolute;
     inset: 0;
     z-index: 0;
+    pointer-events: none;
 }
 
 .hero-image {
@@ -138,6 +139,7 @@ body {
     z-index: 1;
     color: #ffffff;
     max-width: 680px;
+    pointer-events: auto;
 }
 
 .hero-pill {
@@ -359,6 +361,8 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 .pricing-card.featured {
@@ -377,6 +381,7 @@ body {
     background: #ffffff;
     color: var(--text);
     border: none;
+    pointer-events: auto;
 }
 
 .pricing-card li {
